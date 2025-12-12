@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beleza - Enlaces</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            /* Colores extraídos de tu imagen */
+            --bg-color: #580a1a; /* El tono vino oscuro */
+            --text-color: #EAC996; /* El tono dorado/beige */
+            --white-soft: #f9f9f9;
+            --hover-bg: #EAC996;
+            --hover-text: #580a1a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Lato', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: radial-gradient(circle at center, #7a1329 0%, #4a0613 100%);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+            padding: 40px 20px;
+            animation: fadeIn 1.5s ease;
+        }
+
+        /* Estilo de la imagen de perfil/logo */
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%; /* Hazlo redondo */
+            object-fit: cover;
+            border: 3px solid var(--text-color);
+            margin-bottom: 15px;
+            padding: 3px;
+            background-color: transparent;
+        }
+
+        /* Estilo del Título BELEZA */
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        /* Estilo del slogan */
+        .tagline {
+            font-size: 0.9rem;
+            margin-bottom: 35px;
+            letter-spacing: 1px;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        /* Contenedor de los botones */
+        .links-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* Estilo de los botones */
+        .link-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: var(--text-color);
+            border: 1px solid var(--text-color);
+            padding: 18px 25px;
+            border-radius: 50px; /* Bordes redondeados elegantes */
+            transition: all 0.3s ease;
+            position: relative;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            background: rgba(0,0,0,0.2); /* Fondo sutil */
+        }
+
+        .link-btn i {
+            position: absolute;
+            left: 25px;
+            font-size: 1.2rem;
+        }
+
+        /* Efecto al pasar el mouse (Hover) */
+        .link-btn:hover {
+            background-color: var(--hover-bg);
+            color: var(--hover-text);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            font-weight: bold;
+        }
+
+        /* Pie de página */
+        footer {
+            margin-top: 50px;
+            font-size: 0.7rem;
+            opacity: 0.6;
+        }
+
+        /* Animación de entrada */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="./BELLEZA.jpg" alt="Logo Beleza" class="profile-img">
+        
+        <h1>BELEZA</h1>
+        <p class="tagline">Inspira tu belleza con una sola pieza</p>
+
+        <div class="links-list">
+            
+            <a href="https://cle-ser.vercel.app/" class="link-btn" target="_blank">
+                <i class="fa-solid fa-globe"></i> Visita nuestra Web
+            </a>
+
+            <a href="https://wa.me/tu-numero" class="link-btn" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i> Contáctanos en WhatsApp
+            </a>
+
+            <a href="https://instagram.com/tu-usuario" class="link-btn" target="_blank">
+                <i class="fa-brands fa-instagram"></i> Síguenos en Instagram
+            </a>
+
+            <a href="#" class="link-btn" target="_blank">
+                <i class="fa-brands fa-facebook-f"></i> Facebook
+            </a>
+            
+        </div>
+
+        <footer>
+            &copy; 2024 BELEZA. Todos los derechos reservados.
+        </footer>
+    </div>
+
+</body>
+</html>
