@@ -57,8 +57,8 @@ body {
     margin-bottom: 15px;
     padding: 3px;
     background-color: transparent;
-    transition: transform var(--transition-speed) ease, 
-                box-shadow var(--transition-speed) ease;
+    transition: transform var(--transition-speed) ease,
+        box-shadow var(--transition-speed) ease;
 }
 
 .profile-img:hover {
@@ -114,10 +114,21 @@ h1 {
 }
 
 /* Animación escalonada para cada botón */
-.link-btn:nth-child(1) { animation-delay: 0.2s; }
-.link-btn:nth-child(2) { animation-delay: 0.35s; }
-.link-btn:nth-child(3) { animation-delay: 0.5s; }
-.link-btn:nth-child(4) { animation-delay: 0.65s; }
+.link-btn:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.link-btn:nth-child(2) {
+    animation-delay: 0.35s;
+}
+
+.link-btn:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+.link-btn:nth-child(4) {
+    animation-delay: 0.65s;
+}
 
 /* Iconos dentro de los botones */
 .link-btn i {
@@ -169,27 +180,76 @@ footer:hover {
 }
 
 /* ============================================
+   Botón Flotante de WhatsApp
+   ============================================ */
+.whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    transition: all var(--transition-speed) ease;
+    z-index: 1000;
+    animation: pulse 2s infinite;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1) translateY(-3px);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+}
+
+.whatsapp-float:active {
+    transform: scale(1.05);
+}
+
+/* Animación de pulso para llamar la atención */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 4px 25px rgba(37, 211, 102, 0.7);
+    }
+
+    100% {
+        box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    }
+}
+
+/* ============================================
    Animaciones
    ============================================ */
 @keyframes fadeIn {
-    from { 
-        opacity: 0; 
-        transform: translateY(20px); 
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
-    to { 
-        opacity: 1; 
-        transform: translateY(0); 
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
 @keyframes fadeInUp {
-    from { 
-        opacity: 0; 
-        transform: translateY(15px); 
+    from {
+        opacity: 0;
+        transform: translateY(15px);
     }
-    to { 
-        opacity: 1; 
-        transform: translateY(0); 
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
@@ -202,21 +262,21 @@ footer:hover {
     h1 {
         font-size: 2rem;
     }
-    
+
     .profile-img {
         width: 100px;
         height: 100px;
     }
-    
+
     .tagline {
         font-size: 0.8rem;
     }
-    
+
     .link-btn {
         padding: 15px 20px;
         font-size: 0.9rem;
     }
-    
+
     .link-btn i {
         left: 18px;
         font-size: 1rem;
@@ -228,7 +288,7 @@ footer:hover {
     .container {
         padding: 30px 15px;
     }
-    
+
     .link-btn {
         padding: 16px 22px;
     }
@@ -239,16 +299,16 @@ footer:hover {
     .container {
         padding: 50px 30px;
     }
-    
+
     h1 {
         font-size: 3rem;
     }
-    
+
     .profile-img {
         width: 140px;
         height: 140px;
     }
-    
+
     .tagline {
         font-size: 1rem;
     }
@@ -256,6 +316,7 @@ footer:hover {
 
 /* Preferencia de movimiento reducido (accesibilidad) */
 @media (prefers-reduced-motion: reduce) {
+
     *,
     *::before,
     *::after {
