@@ -1,0 +1,273 @@
+/* ============================================
+   BELEZA - Estilos Principales
+   ============================================ */
+
+/* Variables de colores y diseño */
+:root {
+    --bg-color: #580a1a;
+    --text-color: #EAC996;
+    --white-soft: #f9f9f9;
+    --hover-bg: #EAC996;
+    --hover-text: #580a1a;
+    --transition-speed: 0.3s;
+    --border-radius: 50px;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ============================================
+   Estilos del Body
+   ============================================ */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Lato', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: radial-gradient(circle at center, #7a1329 0%, #4a0613 100%);
+}
+
+/* ============================================
+   Contenedor Principal
+   ============================================ */
+.container {
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    padding: 40px 20px;
+    animation: fadeIn 1s ease forwards;
+}
+
+/* ============================================
+   Imagen de Perfil/Logo
+   ============================================ */
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--text-color);
+    margin-bottom: 15px;
+    padding: 3px;
+    background-color: transparent;
+    transition: transform var(--transition-speed) ease, 
+                box-shadow var(--transition-speed) ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 8px 25px rgba(234, 201, 150, 0.3);
+}
+
+/* ============================================
+   Tipografía
+   ============================================ */
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.tagline {
+    font-size: 0.9rem;
+    margin-bottom: 35px;
+    letter-spacing: 1px;
+    opacity: 0.9;
+    font-style: italic;
+}
+
+/* ============================================
+   Lista de Enlaces/Botones
+   ============================================ */
+.links-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Botones de enlace */
+.link-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+    padding: 18px 25px;
+    border-radius: var(--border-radius);
+    transition: all var(--transition-speed) ease;
+    position: relative;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    background: rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Animación escalonada para cada botón */
+.link-btn:nth-child(1) { animation-delay: 0.2s; }
+.link-btn:nth-child(2) { animation-delay: 0.35s; }
+.link-btn:nth-child(3) { animation-delay: 0.5s; }
+.link-btn:nth-child(4) { animation-delay: 0.65s; }
+
+/* Iconos dentro de los botones */
+.link-btn i {
+    position: absolute;
+    left: 25px;
+    font-size: 1.2rem;
+    transition: transform var(--transition-speed) ease;
+}
+
+/* Efectos hover y focus */
+.link-btn:hover,
+.link-btn:focus {
+    background-color: var(--hover-bg);
+    color: var(--hover-text);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    font-weight: bold;
+    outline: none;
+}
+
+.link-btn:focus {
+    outline: 2px solid var(--text-color);
+    outline-offset: 3px;
+}
+
+.link-btn:hover i,
+.link-btn:focus i {
+    transform: scale(1.15);
+}
+
+/* Efecto de presión */
+.link-btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+footer {
+    margin-top: 50px;
+    font-size: 0.75rem;
+    opacity: 0.6;
+    transition: opacity var(--transition-speed) ease;
+}
+
+footer:hover {
+    opacity: 0.9;
+}
+
+/* ============================================
+   Animaciones
+   ============================================ */
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+@keyframes fadeInUp {
+    from { 
+        opacity: 0; 
+        transform: translateY(15px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+/* ============================================
+   Media Queries - Responsive Design
+   ============================================ */
+
+/* Pantallas muy pequeñas (320px o menos) */
+@media (max-width: 320px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .profile-img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .tagline {
+        font-size: 0.8rem;
+    }
+    
+    .link-btn {
+        padding: 15px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .link-btn i {
+        left: 18px;
+        font-size: 1rem;
+    }
+}
+
+/* Pantallas pequeñas (hasta 375px) */
+@media (max-width: 375px) {
+    .container {
+        padding: 30px 15px;
+    }
+    
+    .link-btn {
+        padding: 16px 22px;
+    }
+}
+
+/* Pantallas medianas y grandes */
+@media (min-width: 768px) {
+    .container {
+        padding: 50px 30px;
+    }
+    
+    h1 {
+        font-size: 3rem;
+    }
+    
+    .profile-img {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .tagline {
+        font-size: 1rem;
+    }
+}
+
+/* Preferencia de movimiento reducido (accesibilidad) */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Modo oscuro del sistema (ya está oscuro, pero mejoramos contraste) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #4a0613;
+    }
+}
